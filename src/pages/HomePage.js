@@ -12,11 +12,26 @@ import {
 import AuthenticatedRequest from "../components/AuthenticatedRequest";
 
 function OpenCamera(props) {
-  return <Button {...props} variant="contained">Open Camera</Button>;
+  return (
+    <Button {...props} variant="contained">
+      Open Camera
+    </Button>
+  );
 }
+
 const SignInBtn = (props) => (
-  <Button onClick={props.onClick} variant="contained" style={{ textDecoration: "none" }}>
-      Sign In
+  <Button
+    variant="contained"
+    sx={{
+      backgroundColor: "#76D2A6", // pastel green color
+      borderRadius: "24px", // horizontal shape
+      width: "200px", // adjust width as needed
+      height: "50px", // adjust height as needed
+    }}
+    onClick={props.onClick}
+    //style={{ textDecoration: "none" }}
+  >
+    Sign In
   </Button>
 );
 
@@ -49,10 +64,10 @@ const HomePage = withAuthInfo(({ isLoggedIn }) => {
         </div>
         <div className="row">
           <div className="mx-auto text-center col">
-            <CameraAltIcon style={{ fontSize: "4rem", fill: "green" }} />
+            <CameraAltIcon style={{ marginLeft:"48px", fontSize: "4rem", fill: "green" }} />
           </div>
           <div className="col">
-            <h3>Scan your item</h3>
+            <h3 style={{ marginTop:"16px"}}>Scan your item</h3>
           </div>
         </div>
         <div className="row m-5">
@@ -65,15 +80,26 @@ const HomePage = withAuthInfo(({ isLoggedIn }) => {
         </div>
         <div className="row m-5">
           <div className="mx-auto text-center ">
-            <Button variant="contained">Open Camera</Button>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#76D2A6", // pastel green color
+                borderRadius: "24px", // horizontal shape
+                width: "200px", // adjust width as needed
+                height: "50px", // adjust height as needed
+              }}
+            >
+              Open Camera
+            </Button>
           </div>
         </div>
         <div className="row">
           <div className="text-center">
-            {
-              isLoggedIn ? 
-              "logged in":(<SignInBtn onClick={redirectToLoginPage}/>) 
-            }
+            {isLoggedIn ? (
+              "logged in"
+            ) : (
+              <SignInBtn onClick={redirectToLoginPage} />
+            )}
           </div>
         </div>
       </div>

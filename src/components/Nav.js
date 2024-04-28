@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div style={{ backgroundColor: "#b8e9b8" }} className="row">
+    <div
+      style={{
+        //background: "linear-gradient(to bottom, #ffffff, #76D2A6)",
+        backgroundColor: "#76D2A6",
+      }}
+      className="row"
+    >
       <div className="mx-auto text-center col-md-8">
         <div className="flex">
           <Link to="/">
